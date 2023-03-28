@@ -36,7 +36,7 @@ function pickRandomNum() {
 function play() {
   let userValue = userInput[0].value;
 
-  if (userValue < 1 || userValue > 100) {
+  if (userValue < 1 || userValue > 100 || userValue != computerNum) {
     resultArea[0].textContent = "1과 100 사이 숫자를 입력해 주세요.";
     return;
   }
@@ -46,24 +46,19 @@ function play() {
     return;
   }
 
+  chances--;
+  chancesArea[0].textContent = `남은 기회 : ${chances} 번`;
+  console.log('chances?', chances);
+
+
   if(userValue < computerNum) {
     resultArea[0].textContent = 'UP';
   } else if(userValue > computerNum) {
     resultArea[0].textContent = 'DOWN';
   } else {
-    if (userValue == computerNum) {
       resultArea[0].textContent = '딩동댕';
       gameOver = true;
-    } else {
-      resultArea[0].textContent = '숫자를 입력해주세요.';
-      return;
-    }
   } 
-
-  chances--;
-  chancesArea[0].textContent = `남은 기회 : ${chances} 번`;
-  console.log('chances?', chances);
-
 
   history.push(userValue);
   console.log(history);
@@ -85,6 +80,7 @@ function reset() {
   resultArea[0].textContent = '😎 1~100 중 무엇일까요?';
   chances = 10;
   chancesArea[0].textContent = `남은 기회 : ${chances} 번`;  
+  playBtn[0].disabled = false;
 }
 
 pickRandomNum();
