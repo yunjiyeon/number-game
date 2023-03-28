@@ -46,10 +46,6 @@ function play() {
     return;
   }
 
-  chances--;
-  chancesArea[0].textContent = `남은 기회 : ${chances} 번`;
-  console.log('chances?', chances);
-
   if(userValue < computerNum) {
     resultArea[0].textContent = 'UP';
   } else if(userValue > computerNum) {
@@ -60,8 +56,13 @@ function play() {
       gameOver = true;
     } else {
       resultArea[0].textContent = '숫자를 입력해주세요.';
+      return;
     }
   } 
+
+  chances--;
+  chancesArea[0].textContent = `남은 기회 : ${chances} 번`;
+  console.log('chances?', chances);
 
 
   history.push(userValue);
