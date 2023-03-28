@@ -54,12 +54,15 @@ function play() {
     resultArea[0].textContent = 'UP';
   } else if(userValue > computerNum) {
     resultArea[0].textContent = 'DOWN';
-  } else if(userValue === computerNum) {
-    resultArea[0].textContent = '딩동댕';
-    gameOver = true;
   } else {
-    resultArea[0].textContent = '숫자를 입력해 주세요.';
-  }
+    if (userValue == computerNum) {
+      resultArea[0].textContent = '딩동댕';
+      gameOver = true;
+    } else {
+      resultArea[0].textContent = '숫자를 입력해주세요.';
+    }
+  } 
+
 
   history.push(userValue);
   console.log(history);
