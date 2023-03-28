@@ -16,7 +16,7 @@ let playBtn = document.getElementsByClassName('playBtn');
 let userInput = document.getElementsByClassName('userInput');
 let resultArea = document.getElementsByClassName('resultArea');
 let resetBtn = document.getElementsByClassName('resetBtn');
-let chances = 5;
+let chances = 10;
 let gameOver = false;
 let chancesArea = document.getElementsByClassName('chanceArea');
 let history = [];
@@ -81,7 +81,7 @@ function reset() {
   pickRandomNum();
   
   resultArea[0].textContent = '😎 1~100 중 무엇일까요?';
-  chances = 5;
+  chances = 10;
   gameOver = false;
   playBtn[0].disabled = false;
   chancesArea[0].textContent = `남은 기회 : ${chances} 번`;
