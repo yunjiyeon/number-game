@@ -85,6 +85,8 @@ function reset() {
   chances = 10;
   chancesArea[0].textContent = `남은 기회 : ${chances} 번`;  
   playBtn[0].disabled = false;
+
+  history = [];
 }
 
 pickRandomNum();
