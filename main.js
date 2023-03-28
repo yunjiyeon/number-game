@@ -46,7 +46,6 @@ function play() {
     return;
   }
 
-
   if(userValue < computerNum) {
     resultArea[0].textContent = 'UP';
   } else if(userValue > computerNum) {
